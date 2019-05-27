@@ -24,6 +24,7 @@ Operation* Operation::buildFromEquation(string equation) {
     };
 
     for (int i = 0; numero_de_parentecis; ++i){
+        // equation.[movida]? Ese punto ahí va a generar un error
         int s2(equation.begin(), std::find(equation.[movida], equation.end(), '('));
         int s3(equation.begin(), std::find(equation.[movida+1], equation.end(), ')'));
 
@@ -43,12 +44,14 @@ Operation* Operation::buildFromEquation(string equation) {
     }
     for (int i = 0; numero_de_parentecis; ++i){
         string temp = orden.top();
+        // Qué es solve?
         float temp2 = solve(temp);
         resultado = resultado+temp2;
 
     }
 
-
+    
+    // Esto va a dar error, resultado es float y esta función retorna una ecuación
     return resultado;
 
 }
